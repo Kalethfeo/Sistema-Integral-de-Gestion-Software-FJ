@@ -1,7 +1,10 @@
+
 """Clase para administrar las reservas de Software FJ."""
 
 from datetime import datetime
 
+from cliente import Cliente
+from servicio import Servicio
 from excepciones import (
     DatoInvalidoError,
     ReservaNoPermitidaError
@@ -13,20 +16,21 @@ class Reserva:
     """Representa y administra una reserva de Software FJ."""
 
     def __init__(self, codigo, cliente, servicio, duracion):
+        """Inicializa una reserva y valida sus datos."""
 
         if not isinstance(codigo, str) or not codigo.strip():
             raise DatoInvalidoError(
                 "El código de la reserva es obligatorio."
             )
 
-        if cliente is None:
+        if not isinstance(cliente, Cliente):
             raise DatoInvalidoError(
-                "La reserva debe tener un cliente asignado."
+                "La reserva debe tener un cliente válido."
             )
 
-        if servicio is None:
+        if not isinstance(servicio, Servicio):
             raise DatoInvalidoError(
-                "La reserva debe tener un servicio asignado."
+                "La reserva debe tener un servicio válido."
             )
 
         servicio.validar_disponibilidad()
@@ -44,26 +48,32 @@ class Reserva:
 
     @property
     def codigo(self):
+        """Permite consultar el código de la reserva."""
         return self.__codigo
 
     @property
     def cliente(self):
+        """Permite consultar el cliente de la reserva."""
         return self.__cliente
 
     @property
     def servicio(self):
+        """Permite consultar el servicio reservado."""
         return self.__servicio
 
     @property
     def duracion(self):
+        """Permite consultar la duración de la reserva."""
         return self.__duracion
 
     @property
     def estado(self):
+        """Permite consultar el estado de la reserva."""
         return self.__estado
 
     @property
     def fecha_creacion(self):
+        """Permite consultar la fecha de creación."""
         return self.__fecha_creacion
 
     def confirmar(self):

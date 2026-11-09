@@ -73,6 +73,8 @@ def ejecutar_operacion(numero, descripcion, accion):
 # --------------------------------------------------
 
 def registrar_cliente_valido():
+    """Registra un cliente con información válida."""
+
     cliente = Cliente(
         "1001",
         "Ana Pérez",
@@ -85,6 +87,8 @@ def registrar_cliente_valido():
 
 
 def registrar_cliente_invalido():
+    """Intenta registrar un cliente con correo inválido."""
+
     cliente = Cliente(
         "1002",
         "Luis Gómez",
@@ -97,6 +101,8 @@ def registrar_cliente_invalido():
 
 
 def registrar_segundo_cliente():
+    """Registra un segundo cliente válido."""
+
     cliente = Cliente(
         "1003",
         "Carlos Ruiz",
@@ -113,6 +119,8 @@ def registrar_segundo_cliente():
 # --------------------------------------------------
 
 def crear_sala():
+    """Crea un servicio de reserva de salas."""
+
     servicio = ReservaSala(
         "S01",
         "Sala de reuniones",
@@ -124,6 +132,8 @@ def crear_sala():
 
 
 def crear_alquiler():
+    """Crea un servicio de alquiler de equipos."""
+
     servicio = AlquilerEquipos(
         "S02",
         "Alquiler de portátil",
@@ -135,6 +145,8 @@ def crear_alquiler():
 
 
 def crear_asesoria():
+    """Crea un servicio de asesoría especializada."""
+
     servicio = Asesoria(
         "S03",
         "Asesoría técnica",
@@ -146,6 +158,8 @@ def crear_asesoria():
 
 
 def crear_servicio_invalido():
+    """Intenta crear un servicio con tarifa negativa."""
+
     servicio = ReservaSala(
         "S04",
         "Sala inválida",
@@ -161,6 +175,8 @@ def crear_servicio_invalido():
 # --------------------------------------------------
 
 def crear_reserva_correcta():
+    """Crea y confirma una reserva válida."""
+
     reserva = Reserva(
         "R001",
         clientes[0],
@@ -175,6 +191,8 @@ def crear_reserva_correcta():
 
 
 def crear_reserva_incorrecta():
+    """Intenta crear una reserva con duración inválida."""
+
     return Reserva(
         "R002",
         clientes[0],
@@ -184,6 +202,8 @@ def crear_reserva_incorrecta():
 
 
 def cancelar_reserva():
+    """Cancela la primera reserva registrada."""
+
     return reservas[0].cancelar()
 
 
@@ -192,14 +212,30 @@ def cancelar_reserva():
 # --------------------------------------------------
 
 def demostrar_calculo_flexible():
-    # Impuesto del 19 % y descuento del 10 %.
-    costo = servicios[0].calcular_costo(
+    """Demuestra diferentes variantes del cálculo de costos."""
+
+    # Variante 1: solamente duración.
+    costo_basico = servicios[0].calcular_costo(2)
+
+    # Variante 2: duración e impuesto.
+    costo_impuesto = servicios[0].calcular_costo(
+        2,
+        0.19
+    )
+
+    # Variante 3: duración, impuesto y descuento.
+    costo_completo = servicios[0].calcular_costo(
         2,
         0.19,
         0.10
     )
 
-    return f"Costo final: ${costo:,.2f}"
+    return (
+        f"Cálculo básico: ${costo_basico:,.2f}\n"
+        f"Cálculo con impuesto: ${costo_impuesto:,.2f}\n"
+        f"Cálculo con impuesto y descuento: "
+        f"${costo_completo:,.2f}"
+    )
 
 
 # --------------------------------------------------
@@ -207,6 +243,8 @@ def demostrar_calculo_flexible():
 # --------------------------------------------------
 
 def probar_encadenamiento():
+    """Demuestra el encadenamiento de excepciones."""
+
     reserva = Reserva(
         "R003",
         clientes[1],
@@ -222,6 +260,7 @@ def probar_encadenamiento():
 # --------------------------------------------------
 
 def main():
+    """Ejecuta las pruebas automáticas y muestra el resumen."""
 
     print("=" * 62)
     print("SISTEMA INTEGRAL DE GESTIÓN - SOFTWARE FJ")
@@ -313,7 +352,6 @@ def main():
         operaciones,
         start=1
     ):
-
         ejecutar_operacion(
             numero,
             descripcion,

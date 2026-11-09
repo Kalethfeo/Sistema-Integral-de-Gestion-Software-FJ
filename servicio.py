@@ -13,6 +13,8 @@ class Servicio(Entidad):
     """Clase base abstracta para los servicios del sistema."""
 
     def __init__(self, codigo, nombre, tarifa_base, disponible=True):
+        # Inicializar y validar primero la clase padre Entidad.
+        super().__init__(codigo)
 
         # Validar el nombre.
         if not isinstance(nombre, str) or not nombre.strip():
@@ -36,9 +38,6 @@ class Servicio(Entidad):
                 "La disponibilidad debe ser verdadera o falsa."
             )
 
-        # Inicializar la clase padre Entidad.
-        super().__init__(codigo)
-
         self._codigo = self.identificador
         self._nombre = nombre.strip()
         self._tarifa_base = float(tarifa_base)
@@ -46,18 +45,22 @@ class Servicio(Entidad):
 
     @property
     def codigo(self):
+        """Permite consultar el código del servicio."""
         return self._codigo
 
     @property
     def nombre(self):
+        """Permite consultar el nombre del servicio."""
         return self._nombre
 
     @property
     def tarifa_base(self):
+        """Permite consultar la tarifa base."""
         return self._tarifa_base
 
     @property
     def disponible(self):
+        """Permite consultar la disponibilidad."""
         return self._disponible
 
     def validar_disponibilidad(self):

@@ -110,3 +110,35 @@
 2026-11-09 15:12:48,157 | INFO | Operación 11 correcta: Demostrar cálculo con impuesto y descuento
 2026-11-09 15:12:48,157 | INFO | Finalizó intento de procesamiento de reserva R003.
 2026-11-09 15:12:48,157 | ERROR | Operación 12: RuntimeError: No fue posible procesar la reserva. | Causa original: La reserva debe estar confirmada para procesarse.
+2026-11-09 15:37:23,038 | INFO | Inicio de pruebas del sistema.
+2026-11-09 15:37:23,038 | INFO | Operación 1 correcta: Registrar un cliente válido
+2026-11-09 15:37:23,038 | ERROR | Operación 2: DatoInvalidoError: El correo electrónico no tiene un formato válido.
+2026-11-09 15:37:23,038 | INFO | Operación 3 correcta: Registrar un segundo cliente válido
+2026-11-09 15:37:23,039 | INFO | Operación 4 correcta: Crear servicio de reserva de salas
+2026-11-09 15:37:23,039 | INFO | Operación 5 correcta: Crear servicio de alquiler de equipos
+2026-11-09 15:37:23,039 | INFO | Operación 6 correcta: Crear servicio de asesoría especializada
+2026-11-09 15:37:23,039 | ERROR | Operación 7: DatoInvalidoError: La tarifa base debe ser un número positivo.
+2026-11-09 15:37:23,039 | INFO | Reserva R001 confirmada.
+2026-11-09 15:37:23,039 | INFO | Operación 8 correcta: Crear y confirmar una reserva válida
+2026-11-09 15:37:23,040 | ERROR | Operación 9: DatoInvalidoError: La sala debe reservarse mínimo por una hora.
+2026-11-09 15:37:23,040 | INFO | Reserva R001 cancelada.
+2026-11-09 15:37:23,041 | INFO | Operación 10 correcta: Cancelar una reserva
+2026-11-09 15:37:23,043 | INFO | Operación 11 correcta: Demostrar cálculo con impuesto y descuento
+2026-11-09 15:37:23,043 | INFO | Finalizó intento de procesamiento de reserva R003.
+2026-11-09 15:37:23,043 | ERROR | Operación 12: RuntimeError: No fue posible procesar la reserva. | Causa original: La reserva debe estar confirmada para procesarse.
+2026-11-09 15:51:04,980 | INFO | Inicio de pruebas del sistema.
+2026-11-09 15:51:04,981 | INFO | Operación 1 correcta: Registrar un cliente válido
+2026-11-09 15:51:04,981 | ERROR | Operación 2: DatoInvalidoError: El correo electrónico no tiene un formato válido.
+2026-11-09 15:51:04,982 | INFO | Operación 3 correcta: Registrar un segundo cliente válido
+2026-11-09 15:51:04,982 | INFO | Operación 4 correcta: Crear servicio de reserva de salas
+2026-11-09 15:51:04,982 | INFO | Operación 5 correcta: Crear servicio de alquiler de equipos
+2026-11-09 15:51:04,982 | INFO | Operación 6 correcta: Crear servicio de asesoría especializada
+2026-11-09 15:51:04,982 | ERROR | Operación 7: DatoInvalidoError: La tarifa base debe ser un número positivo.
+2026-11-09 15:51:04,983 | INFO | Reserva R001 confirmada.
+2026-11-09 15:51:04,983 | INFO | Operación 8 correcta: Crear y confirmar una reserva válida
+2026-11-09 15:51:04,985 | ERROR | Operación 9: DatoInvalidoError: La sala debe reservarse mínimo por una hora.
+2026-11-09 15:51:04,985 | INFO | Reserva R001 cancelada.
+2026-11-09 15:51:04,985 | INFO | Operación 10 correcta: Cancelar una reserva
+2026-11-09 15:51:04,986 | INFO | Operación 11 correcta: Demostrar cálculo con impuesto y descuento
+2026-11-09 15:51:04,986 | INFO | Finalizó intento de procesamiento de reserva R003.
+2026-11-09 15:51:04,986 | ERROR | Operación 12: RuntimeError: No fue posible procesar la reserva. | Causa original: La reserva debe estar confirmada para procesarse.

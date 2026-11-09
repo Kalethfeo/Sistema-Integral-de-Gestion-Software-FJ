@@ -9,6 +9,7 @@ class Entidad(ABC):
     """Clase base abstracta para las entidades de Software FJ."""
 
     def __init__(self, identificador: str):
+        """Inicializa la entidad y valida su identificador."""
 
         if (
             not isinstance(identificador, str)

@@ -16,6 +16,7 @@ class Cliente(Entidad):
         correo: str,
         telefono: str
     ):
+        """Inicializa un cliente y valida sus datos."""
 
         super().__init__(identificacion)
 
